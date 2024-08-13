@@ -1,3 +1,4 @@
+// App.js
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
@@ -7,7 +8,7 @@ import BlogList from "./components/BlogList.jsx";
 
 function App() {
   const [blogs, setBlogs] = useState([]);
-  const [currentBlog, setCurrentBlog] = useState(null); // 수정: [null] 대신 null
+  const [currentBlog, setCurrentBlog] = useState(null);
 
   useEffect(() => {
     const savedBlogs = JSON.parse(localStorage.getItem("blogs"));
@@ -17,7 +18,7 @@ function App() {
   }, []);
 
   const addBlog = (title, content) => {
-    const newBlog = { id: Date.now(), title, content }; // 수정: Date.now()
+    const newBlog = { id: Date.now(), title, content };
     const updatedBlogs = [...blogs, newBlog];
     setBlogs(updatedBlogs);
     localStorage.setItem("blogs", JSON.stringify(updatedBlogs));
@@ -45,12 +46,7 @@ function App() {
       ) : (
         <>
           <BlogForm addBlog={addBlog} />
-          <BlogList
-            blogs={blogs}
-            openBlog={openBlog}
-            deleteBlog={deleteBlog}
-          />{" "}
-          {/* 수정: prop 이름 "blogs" */}
+          <BlogList blogs={blogs} openBlog={openBlog} deleteBlog={deleteBlog} />
         </>
       )}
     </div>

@@ -1,37 +1,51 @@
+// BlogForm.jsx
 import React, { useState } from "react";
 
 function BlogForm({ addBlog }) {
-  const [title, setTitle] = useState(""); // 수정: 일관된 대소문자 사용
+  const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addBlog(title, content); // props에서 addBlog 함수 사용
+    addBlog(title, content);
     setTitle("");
     setContent("");
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="titleContainer">
-        <label>Title</label>
-        <input
-          type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)} // 수정: 일관된 대소문자 사용
-          required
-        />
-      </div>
-      <div className="textAreaContainer">
-        <label>Content</label>
-        <textarea
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-          required
-        ></textarea>
-      </div>
-      <button type="submit">Add Blog</button> {/* 수정: 일관된 대소문자 사용 */}
-    </form>
+    <div className="container mt-4">
+      <h2>React Blog</h2>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label htmlFor="title" className="form-label">
+            Title
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="content" className="form-label">
+            Content
+          </label>
+          <textarea
+            className="form-control"
+            id="content"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            required
+          ></textarea>
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Add Blog
+        </button>
+      </form>
+    </div>
   );
 }
 
