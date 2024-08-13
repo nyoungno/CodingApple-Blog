@@ -40,7 +40,7 @@ function App() {
   };
 
   return (
-    <div className="App container">
+    <div className="App container pt-3 pb-3">
       {currentBlog ? (
         <Blog blog={currentBlog} closeBlog={closeBlog} />
       ) : (

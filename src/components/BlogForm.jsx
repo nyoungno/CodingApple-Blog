@@ -13,11 +13,11 @@ function BlogForm({ addBlog }) {
   };
 
   return (
-    <div className="container mt-4">
-      <h2>React Blog</h2>
+    <div className="pt-3 pb-3">
+      <h2 className="fw-bolder Form-title">React Blog</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label htmlFor="title" className="form-label">
+          <label htmlFor="title" className="form-label fw-bolder">
             Title
           </label>
           <input
@@ -30,7 +30,7 @@ function BlogForm({ addBlog }) {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="content" className="form-label">
+          <label htmlFor="content" className="form-label fw-bolder">
             Content
           </label>
           <textarea
@@ -41,9 +41,11 @@ function BlogForm({ addBlog }) {
             required
           ></textarea>
         </div>
-        <button type="submit" className="btn btn-primary">
-          Add Blog
-        </button>
+        <div className="add-button">
+          <button type="submit" className="btn btn-primary">
+            Add Blog
+          </button>
+        </div>
       </form>
     </div>
   );

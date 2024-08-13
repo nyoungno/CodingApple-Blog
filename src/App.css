@@ -1,4 +1,30 @@
 .App {
+  min-height: 100vh; /* 전체 화면 높이로 설정하여 페이지가 전체 높이를 차지하도록 합니다. */
+  background-color: #f8f9fa; /* 배경색을 밝은 회색으로 설정합니다. */
+  color: #333;
+  border-radius: 15px;
+  border: 8px solid gray;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+p {
+  margin: 0; /* 기본 여백 제거 */
+  word-wrap: break-word; /* 긴 단어를 줄바꿈하여 컨테이너에 맞게 조정합니다. */
+}
+
+.Form-title {
+  text-align: center;
+}
+.add-button {
+  text-align: center;
+}
+.list-title {
+  text-align: center;
+}
+.sub-title {
+  text-align: center;
+}
+.back-button {
   text-align: center;
 }
 

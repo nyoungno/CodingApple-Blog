@@ -3,8 +3,8 @@ import React from "react";
 
 function BlogList({ blogs, openBlog, deleteBlog }) {
   return (
-    <div className="container mt-4">
-      <h2>Blog List</h2>
+    <div className="pt-3 pb-3">
+      <h2 className="fw-bolder list-title">Blog List</h2>
       <ul className="list-group">
         {blogs.map((blog) => (
           <li
