@@ -1,5 +1,3 @@
-### https://knn-blog.netlify.app/
-
 # Blog
 
 ## 프로젝트 기간 : 08/12 ~ 진행중(복습중)
